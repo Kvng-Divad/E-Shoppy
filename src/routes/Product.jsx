@@ -8,6 +8,10 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
+import { Add, Remove } from '@mui/icons-material'
+
+
+
 
 
 const Product = () => {
@@ -17,7 +21,17 @@ const Product = () => {
     const handleChange = (event) => {
             setColor(event.target.value);
         };
+
     const [size, setSize] = useState("");
+
+    const [quantity, setQuantity] = useState(1);
+    const handleQuantity = (type) => {
+      if (type === "dec") {
+        quantity > 1 && setQuantity(quantity - 1);
+      } else {
+        setQuantity(quantity + 1);
+      }
+    };
   return (
     <Container>
         <Navbar/>
@@ -37,10 +51,11 @@ const Product = () => {
               <p className="product-price">
                 $ 20
               </p>
+
               <div className="filter-container">
                 <div className="filter">
                   {/*<h1 className="filter-title">Color</h1>*/}
-                  <FormControl>
+                  <FormControl >
                       <FormLabel id="Color" className="filter-title" >Color</FormLabel>
                       <RadioGroup
                         row
@@ -95,6 +110,18 @@ const Product = () => {
                   </FormControl>
                 </div>
               </div>
+
+              <div className="add-container grid">
+
+                <div className="amount-container flex">
+                    <Remove className="remove-btn" onClick={() => handleQuantity("dec")}/>
+                    <span className="amount flex">{quantity}</span>
+                    <Add className="remove-btn" onClick={() => handleQuantity("inc")}/>
+                </div>
+
+                <button className='btn'> Add to Cart </button>
+              </div>
+
             </div>
         </div>
         <Footer/>
@@ -104,9 +131,8 @@ const Product = () => {
 
 const Container = styled.div`
   .product-wrapper{
-    padding:3rem;
-    grid-template-columns:repeat(2,1fr);
-    
+    padding:3rem 1rem;
+    grid-template-columns:1fr;
   }
   .img-container{
     width:100%;
@@ -118,9 +144,9 @@ const Container = styled.div`
     object-fit:cover;
   }
   .product-info{
-    padding: 2rem 2.5rem;
+    padding: 1rem;
     flex-direction: column;
-    gap:1.5rem;
+    gap:1rem;
   }
   .product-title{
       font-size:var(--h1-size);
@@ -142,6 +168,36 @@ const Container = styled.div`
   .filter-title{
       font-weight: 700 !important;
       color:var(--dark-text) !important;
+      font-family: var(--bdy-font-family) !important;
+  }
+  .filter-item{
+      font-weight: 600 !important;
+      color:var(--dark-text) !important;
+      font-family: var(--bdy-font-family) !important;
+  }
+  .add-container{
+    gap:1.5rem;
+  }
+  .amount-container{
+    gap:1rem;
+    align-items:center;
+  }
+  .amount{
+    width:30px;
+    height:30px;
+    align-items:center;
+    justify-content:center;
+    border-radius:10px;
+    border: 1px solid var(--dark-text);
+  }
+  @media (min-width:960px){
+    .product-wrapper{
+      padding:3rem;
+      grid-template-columns:repeat(2,1fr);
+    }
+    .product-info{
+      padding: 1rem 2.5rem;
+    }
   }
 `
 export default Product

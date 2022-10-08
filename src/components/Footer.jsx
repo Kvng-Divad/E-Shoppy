@@ -75,17 +75,19 @@ const Footer = () => {
     }
 
 const Container =  styled.div`
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(1,1fr);
     background:var(--skin-color);
     width:100%;
     height:100%;
     color:var(--white-text) !important;
-    padding:3rem 2rem;
+    padding:3rem 1rem;
+    gap: 2rem 0rem;
 
     .footer-title{
         font-size:1.25rem;
         font-weight:600;
         letter-spacing:1px;
+        margin-bottom: .5rem;
     }
 
     .footer-left{
@@ -124,7 +126,6 @@ const Container =  styled.div`
     }
     .footer-center{
         justify-items:flex-start;
-        justify-self:center;
         gap:1rem;
 
         .footer-center-links{
@@ -147,7 +148,6 @@ const Container =  styled.div`
 
     }
     .footer-right{
-        justify-self:center;
         .footer-items{
             gap:.5rem;
         }
@@ -165,7 +165,16 @@ const Container =  styled.div`
         }
     }
 
-    
+    @media (min-width:960px){
+        grid-template-columns:repeat(3,1fr);
+        padding:3rem 2rem;
+        .footer-center, .footer-right{
+            justify-self:center;
+        }
+        .footer-title{
+            margin-bottom: 0rem;
+        }
+    }
 `
 
 export default Footer
