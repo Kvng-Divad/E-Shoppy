@@ -9,12 +9,13 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { useLocation } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 
 
 const ProductList = () => {
 
     const location = useLocation();
+    const navigate = useNavigate();
     const cat = location.pathname.split("/")[2];
 
     const [filter, setFilter] = useState('');

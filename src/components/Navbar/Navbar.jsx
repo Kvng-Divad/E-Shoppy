@@ -4,7 +4,9 @@ import styled from 'styled-components'
 import {FaSearch} from 'react-icons/fa'
 import Badge from '@mui/material/Badge';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { NavLink } from 'react-router-dom';
+import { NavLink , Link} from 'react-router-dom';
+
+
 
 
 const Navbar = () => {
@@ -24,7 +26,7 @@ const Navbar = () => {
               </div>
             </div>
             <div className='nav-center flex'>
-              <h1 className='logo'>E<span>-Shoppy</span></h1>
+              <Link to='/' className='logo'>E<span>-Shoppy</span></Link>
             </div>
             <div className='nav-right flex'>
 
@@ -84,6 +86,7 @@ const Container = styled.div`
       font-size:var(--h2-size);
       font-weight:700;
       font-family: var(--bdy-font-family-alt);
+      color:var(--dark-text);
        span{
         font-size:var(--h3-size);
         font-weight:600;

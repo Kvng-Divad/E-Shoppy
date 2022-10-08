@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { FaChevronRight, FaChevronLeft } from 'react-icons/fa'
 import styled from 'styled-components'
 import {sliderItems} from '../components/Data'
+import { Link } from 'react-router-dom'
 
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -12,6 +13,7 @@ const Slider = () => {
       setSlideIndex(slideIndex < 3 ? slideIndex + 1 : 0);
     }
   };
+
 
   return (
     <Container className='flex' >
@@ -33,7 +35,7 @@ const Slider = () => {
             <div className="slide-info grid">
               <h1 className='slide-title'>{item.title}</h1>
               <p className='slide-description'>{item.desc}</p>
-              <button className='btn'> SHOW NOW </button>
+              <Link to='/products' className='btn'> SHOW NOW </Link>
             </div>
 
           </div>
