@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&family=Merienda:wght@400;700&family=Nunito:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+
+:root{
+    --bg-color-glass: rgba(255, 255, 255, 0.164);
+    --bg-color-black:#fff;
+    --body-color:#124a6f1a;
+    --cont-color: #24394919;
+    --skin-color:#243949;
+    --skin-color1:#2a353d;  
+    --skin-color2: #18242d;
+    --white-color: #fff;
+    --white-color2: #eee;
+    --circle-color: rgba(255, 255, 255, 0.4);
+    --gray-color:  rgba(0, 0, 0, 0.2);
+    --card-color1:linear-gradient(to top, #f43b47 0%, #453a94 100%);
+    --card-color2:linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+    --active-item: #243949; 
+  
+    --white-text:#fff;
+    --white-text2:#eee;
+    --dark-text:#0b0b0f;
+    --dark-text2:#02022a;
+    --box-shadow: 0 .15rem .5rem rgba(3, 3, 3, 0.274);
+  
+    --font-medium: 500;
+    --font-semibold:600;
+    --font-bold:800;
+    --font-E-bold:900;
+  
+    --bdy-font-family: "poppins" , sans-serif; 
+    --bdy-font-family-alt: "nunito" , sans-serif;
+    --bdy-font-family-alt2: "space grotesk" , sans-serif;
+    --bdy-font-family-alt3: 'Lobster Two', cursive;
+    --bdy-font-family-alt4: 'merienda', cursive;
+    
+    --font-size-bggr:3rem;
+    --font-size-bg: 2.25rem;
+    --font-size-m: 1.5rem;
+    --font-size-nr: 1rem;
+    --font-size-sm: .85em;
+    --font-size-smlr: .75rem;
+    --h1-size: 1.75rem;
+    --h2-size: 1.5rem;
+    --h3-size: 1.25rem;
+    
+  }
+  
+  
+  
+  *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--bdy-font-family);
+    font-size: 14px;
+    text-decoration: none;
+    scroll-behavior: smooth;
+  }
+  
+  body{
+    font-size: var(--font-size-nr);
+    font-weight: var(--font-medium);
+    background: var(--bg-color-black);
+    color: var(--dark-text);
+    transition: all .3s ease;
+  }
+  
+  ::before, ::after
+  {
+      box-sizing: border-box;
+  }
+  
+  ul{
+    list-style: none;
+  }
+  
+  input,button{
+    font-family: var(--bdy-font-family);
+    outline: none;
+    border: none;
+  }
+  
+  /* reuseable */
+  .body{
+    width: 100%;
+    min-height: 100vh;
+    overflow-x:hidden;
+  }
+  .main-container{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    margin: auto;
+  }
+
+  .main{
+    display: grid;
+  }
+  .container{
+    width: 100%;
+    height: 100%;
+    display: grid;
+  }
+  .flex{
+    display: flex;
+  }
+  .grid{
+    display: grid;
+  }
+  
+  
+  .btn{
+    padding: .5rem;
+    max-width: 8rem;
+    font-size: var(--font-size-nr);
+    font-weight: var(--font-semibold);
+    color: var(--dark-text);
+    text-transform: uppercase;
+    cursor: pointer;
+    background:transparent;
+    border: 1px solid var(--skin-color);
+    box-shadow: var(--box-shadow);
+    font-family:var(--bdy-font-family);
+  }
+  .btn:hover{ 
+    background: var(--skin-color);
+    color: var(--white-text);
+    transition: .3s;
+  }
+  .btn-alt{
+    background-color: var(--white-text);
+    color: var(--dark-text);
+  }
+  .btn-alt:hover{
+    transition: all .3s ease;
+  }
+
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    display: none;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(216, 216, 216);
+    border-radius: 40px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+
+  @media (max-width:960px){
+    *{
+        font-size: 16px;
+      }
+  }
