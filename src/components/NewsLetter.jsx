@@ -8,7 +8,7 @@ const NewsLetter = () => {
     <Container className='flex'>
 
         <h1 className="news-title">Newsletter</h1>
-        <p className="news-desc">Get timely updates on your favourite products and our new products.</p>
+        <p className="news-desc">Get timely updates on your favourite products and our latest products.</p>
 
         <div className="input-container flex">
             <input type="text" className="news-input" placeholder='Your email'/>
