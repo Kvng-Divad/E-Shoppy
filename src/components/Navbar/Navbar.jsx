@@ -30,8 +30,8 @@ const Navbar = () => {
             </div>
             <div className='nav-right flex'>
 
-              <NavLink className='navlink' to=''>Register</NavLink>
-              <NavLink className='navlink' to=''>sign In</NavLink>
+              <NavLink className='navlink' to='/register'>Register</NavLink>
+              <NavLink className='navlink' to='/sign-in'>sign In</NavLink>
 
               <Badge badgeContent={4} color="primary">
               <ShoppingCartIcon  color='action'/>
