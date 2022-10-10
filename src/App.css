@@ -122,6 +122,7 @@
     border: 1px solid var(--skin-color);
     box-shadow: var(--box-shadow);
     font-family:var(--bdy-font-family);
+    
   }
   .btn:hover{ 
     background: var(--skin-color);

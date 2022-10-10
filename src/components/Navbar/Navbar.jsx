@@ -5,14 +5,15 @@ import {FaSearch} from 'react-icons/fa'
 import Badge from '@mui/material/Badge';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { NavLink , Link} from 'react-router-dom';
-
+import {useNavigate} from "react-router";
 
 
 
 const Navbar = () => {
-  return (
+    const navigate = useNavigate();
+    return(
     <Container>
-        <div className='wrapper flex'>
+        <div className='Wrapper flex'>
             <div className='nav-left flex'>
               <span> EN </span>
               <div className='search-input flex'>
@@ -34,7 +35,7 @@ const Navbar = () => {
               <NavLink className='navlink' to='/sign-in'>sign In</NavLink>
 
               <Badge badgeContent={4} color="primary">
-              <ShoppingCartIcon  color='action'/>
+                <ShoppingCartIcon  color='action' onClick={() => navigate('/cart') }/>
               </Badge>
 
               
@@ -48,7 +49,7 @@ const Navbar = () => {
 const Container = styled.div`
     height:60px;
 
-    .wrapper{
+    .Wrapper{
         padding: .75rem 3.5rem;
         justify-content: space-between;
         align-items: center;
