@@ -81,26 +81,26 @@ const Cart = () => {
                         <div className="product-cont flex">
                             <div className="product-details flex">
                                     <div className="product-img">
-                                        <img src="https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png" alt="img" className="product-image" />
+                                        <img src="https://d3o2e4jr3mxnm3.cloudfront.net/Rocket-Vintage-Chill-Cap_66374_1_lg.png" alt="img" className="product-image" />
                                     </div>
 
                                     <div className="details  grid">
 
                                         <p className="detail p-name"><span>Product:</span>
-                                            Stick Man T-shirt
+                                            huski Gray Face Cap
                                         </p>
 
                                         <p className="detail id"><span>ID:</span>
-                                            1756789042
+                                            1756789489
                                         </p>
 
                                         <div className="color-info flex">
-                                            <div className="color-img" style={{background:'black'}}></div>
-                                            <span>Black</span>
+                                            <div className="color-img" style={{background:'Gray'}}></div>
+                                            <span>Gray</span>
                                         </div>
 
                                         <p className="detail size"><span>Size:</span>
-                                            L
+                                            22
                                         </p>
                                     </div>
                                 
@@ -114,7 +114,7 @@ const Cart = () => {
                                     <Remove className="remove-btn" onClick={() => handleQuantity("dec")}/>
                                 </div>
                                 
-                                <p className="price">$ 30</p>
+                                <p className="price">$ 10</p>
 
                             </div>
                         </div>
@@ -122,26 +122,26 @@ const Cart = () => {
                         <div className="product-cont flex">
                             <div className="product-details flex">
                                     <div className="product-img">
-                                        <img src="https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png" alt="img" className="product-image" />
+                                        <img src="https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png" alt="img" className="product-image" />
                                     </div>
 
                                     <div className="details  grid">
 
                                         <p className="detail p-name"><span>Product:</span>
-                                            Stick Man T-shirt
+                                            Winter Coat (Long)
                                         </p>
 
                                         <p className="detail id"><span>ID:</span>
-                                            1756789042
+                                            1756756720
                                         </p>
 
                                         <div className="color-info flex">
-                                            <div className="color-img" style={{background:'black'}}></div>
-                                            <span>Black</span>
+                                            <div className="color-img" style={{background:'brown'}}></div>
+                                            <span>Brown</span>
                                         </div>
 
                                         <p className="detail size"><span>Size:</span>
-                                            L
+                                            XL
                                         </p>
                                     </div>
                                 
@@ -155,7 +155,7 @@ const Cart = () => {
                                     <Remove className="remove-btn" onClick={() => handleQuantity("dec")}/>
                                 </div>
                                 
-                                <p className="price">$ 30</p>
+                                <p className="price">$ 45</p>
 
                             </div>
                         </div>
