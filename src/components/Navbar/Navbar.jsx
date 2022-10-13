@@ -1,16 +1,28 @@
 import TextField from '@mui/material/TextField';
-import React from 'react'
+import React,{useState} from 'react'
 import styled from 'styled-components'
 import {FaSearch} from 'react-icons/fa'
 import Badge from '@mui/material/Badge';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { NavLink , Link} from 'react-router-dom';
 import {useNavigate} from "react-router";
+import  { FaBars , FaTimes} from "react-icons/fa";
 
 
 
 const Navbar = () => {
     const navigate = useNavigate();
+    const [click, setClick] = useState(false);
+    const handleClick = () => setClick(!click);
+
+    const reSize = () => {
+      if(click === true) {
+        setClick(!click)
+    }
+    }
+
+
+  window.addEventListener("resize", reSize);
     return(
     <Container>
         <div className='Wrapper flex'>
@@ -38,7 +50,54 @@ const Navbar = () => {
                 <ShoppingCartIcon  color='action' onClick={() => navigate('/cart') }/>
               </Badge>
 
-              
+              <div className='toggler' onClick={handleClick}>
+              {click ? (
+
+                <FaTimes size={16} style={{color:"#000"}} />
+                  ) : (
+
+                  <FaBars size={16} style={{color:"#000"}}/>
+                  )      
+              }         
+
+              </div>
+            </div>
+
+
+
+            <div className={click ? 'drop-menu grid  active' : 'drop-menu grid '}>
+
+              <div className='toggler menu-toggler' onClick={handleClick}>
+                {click ? (
+
+                  <FaTimes size={16} style={{color:"#000"}} />
+                    ) : (
+
+                    <FaBars size={16} style={{color:"#000"}}/>
+                    )      
+                }         
+
+              </div>
+
+              <div className='menu-cont grid'>
+                  <div className='searchinput flex'>
+                    <TextField
+                        hiddenLabel
+                        id="search"
+                        size="small"
+                        variant="standard"
+                      />
+                      <FaSearch style={{color:'gray'}}/>
+                    </div>
+
+                    <NavLink className='navLink' to='/'>Home</NavLink>
+                    <NavLink className='navLink' to='/cart'>Cart</NavLink>
+                    <NavLink className='navLink' to='/register'>Register</NavLink>
+                    <NavLink className='navLink' to='/sign-in'>sign In</NavLink>
+
+                    <button className="btn altr" onClick={() => navigate('/products') }>SHOP NOW</button>
+
+                </div>
             </div>
         </div>
     </Container>
@@ -47,10 +106,11 @@ const Navbar = () => {
 
 
 const Container = styled.div`
-    height:60px;
+    height:70px;
+    box-shadow:var(--box-shadow);
 
     .Wrapper{
-        padding: .75rem 3.5rem;
+        padding: 1.25rem 1rem;
         justify-content: space-between;
         align-items: center;
     }
@@ -77,11 +137,13 @@ const Container = styled.div`
       border: .15rem solid lightgray;
       padding: 0.25rem 1rem;
       border-radius:3rem;
+      display:none;
     }
     .searchinput{
-      position: relative !important;
-      font-size:.85rem !important;
-      color:var(--dark-text2) !important;
+      align-items:center;
+      border: .15rem solid lightgray;
+      padding: 0.25rem 1rem;
+      border-radius:3rem;
     }
     .logo{
       font-size:var(--h2-size);
@@ -100,6 +162,64 @@ const Container = styled.div`
       color:var(--dark-text);
       font-size:var(--font-size-sm);
       text-transform:uppercase;
+      display:none;
+    }
+    .toggler{
+      position: relative;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+  }
+  .drop-menu{
+      background-color: var(--body-color);
+      gap:3rem;
+      display: none;
+      position: fixed;
+      top:0;
+      bottom:3rem;
+      left: 0;
+      right: 0;
+      transition: all .5s ease;
+      z-index:10;
+      backdrop-filter:blur(5px);
+      padding:2rem;
+  }
+  .drop-menu.active{
+      display: block;
+  }
+  .menu-cont{
+      justify-items: center;
+      align-items:center;
+      gap:2rem;
+      margin-top:3rem;
+  }
+  .menu-toggler{
+    justify-content:flex-start;
+  }
+  .navLink{
+    font-family:var(--bdy-font-family-alt4);
+    color:var(--dark-text);
+    font-size:var(--font-size-nr);
+    font-weight:900;
+    text-transform:uppercase;
+  }
+    @media (min-width:760px){
+      .Wrapper{
+        padding: .75rem 3.5rem;
+      }
+      .search-input{
+        display:flex;
+      }
+    }
+    @media (min-width:960px){
+      .toggler{
+          display:none;
+      }
+      .navlink{
+          display:flex;
+      }
+
     }
 `
 

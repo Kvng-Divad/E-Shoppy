@@ -26,17 +26,20 @@ const Cart = () => {
                 <h1 className="page-title">YOUR BAG</h1>
             </div>
             <div className="container grid">
-                <div className="top flex">
-                    <button className="button alt" onClick={() => navigate('/products')}>CONTINUE SHOPPING</button>
-                    <div className="top-texts flex">
-                        <p className="top-text">Shopping Bag (2)</p>
-                        <p className="top-text">Your Wishlist (0)</p>
-                    </div>
-                    <button className="button">CHECKOUT NOW</button>
+
+                <div className="top-texts flex">
+                    <p className="top-text">Shopping Bag (3)</p>
+                    <p className="top-text">Your Wishlist (0)</p>
                 </div>
 
+                <div className="top flex">
+                    <button className="button alt" onClick={() => navigate('/products')}>CONTINUE SHOPPING</button>
+                    <button className="button">CHECKOUT NOW</button>
+                </div>
+                
+
                 <div className="bottom grid">
-                    <div className="info-cont">
+                    <div className="info-cont grid">
                         <div className="product-cont flex">
                             <div className="product-details flex">
                                     <div className="product-img">
@@ -77,6 +80,7 @@ const Cart = () => {
 
                             </div>
                         </div>
+                            <hr className='hr'/>
 
                         <div className="product-cont flex">
                             <div className="product-details flex">
@@ -118,6 +122,7 @@ const Cart = () => {
 
                             </div>
                         </div>
+                        <hr className='hr'/>
 
                         <div className="product-cont flex">
                             <div className="product-details flex">
@@ -128,7 +133,7 @@ const Cart = () => {
                                     <div className="details  grid">
 
                                         <p className="detail p-name"><span>Product:</span>
-                                            Winter Coat (Long)
+                                            Winter Coat
                                         </p>
 
                                         <p className="detail id"><span>ID:</span>
@@ -159,10 +164,31 @@ const Cart = () => {
 
                             </div>
                         </div>
+                        <hr className='hr'/>
+
                     </div>
 
-                    <div className="summary-cont">
-
+                    <div className="summary-cont grid">
+                        <div className="title">
+                            <h1 className="page-title">ORDER SUMMARY</h1>
+                        </div>
+                        <div className="summary-item">
+                            <p className="summary-text">Subtotal</p>
+                            <p className="summary-price">$ 85</p>
+                        </div>
+                        <div className="summary-item">
+                            <p className="summary-text">Estimated Shipping</p>
+                            <p className="summary-price">$ 5.70</p>
+                        </div>
+                        <div className="summary-item">
+                            <p className="summary-text">Shipping Discount</p>
+                            <p className="summary-price">$ -2.50</p>
+                        </div>
+                        <div className="summary-item">
+                            <p className="summary-text total">Total</p>
+                            <p className="summary-price total">$ 88.20</p>
+                        </div>
+                        <button className="button alt2">CHECKOUT NOW</button>
                     </div>
                 </div>
             </div>
@@ -190,15 +216,15 @@ const Container = styled.div`
         justify-content: space-between;
         align-items:center;
         width: 100%;
-        padding: 1.5rem;
     }
     .top-texts{
-        justify-content: space-between;
+        justify-content: center;
         align-items:center;
-        gap:1rem;
+        gap:3rem;
     }
     .top-text{
-        font-weight: 600;
+        padding: 1rem 0 0;
+        font-weight: 700;
         font-size:.85rem;
         font-family:var(--bdy-font-family-alt4);
         color: var(--dark-text2);
@@ -216,6 +242,7 @@ const Container = styled.div`
         border: 1px solid var(--skin-color);
         box-shadow: var(--box-shadow);
         max-width:80%;
+        max-height:3rem;
         :hover{
             background:transparent;
             color:var(--dark-text);
@@ -229,13 +256,19 @@ const Container = styled.div`
             color:var(--white-text);
         }
     }
+    .alt2{
+        max-width:100%;
+    }
     .bottom{
         grid-template-columns:repeat(1,1fr);
+        gap:2rem;
     }
     .info-cont{
+        gap:2rem;
     }
     .product-cont{
-        
+        justify-content: space-between;
+        gap:1rem;
         align-items:center;
     }
     .product-details{
@@ -244,7 +277,7 @@ const Container = styled.div`
         gap:1rem;
     }
     .product-image{
-        width:200px;
+        width:80px;
     }
     .details{
         justify-content: space-between;
@@ -253,7 +286,7 @@ const Container = styled.div`
     }
     .detail{
         display:flex;
-        gap:.5rem;
+        gap:.25rem;
         align-items:center;
         span{
             font-weight: 700;
@@ -269,13 +302,13 @@ const Container = styled.div`
             text-transform:uppercase;
     }
     .id{
-        font-weight: 600;
+            font-weight: 600;
             font-size:.85rem;
             color: var(--dark-text2);
             font-family:var(--bdy-font-family-alt);
     }
     .size{
-        font-weight: 600;
+            font-weight: 600;
             font-size:.85rem;
             color: var(--dark-text2);
             font-family:var(--bdy-font-family-alt);
@@ -303,7 +336,7 @@ const Container = styled.div`
         font-family:var(--bdy-font-family-alt);
     }
     .price-details{
-        margin:auto;
+        justify-self:center;
         justify-items:center;
         align-items:center;
         gap:1rem;
@@ -321,9 +354,58 @@ const Container = styled.div`
         border-radius:10px;
         border: 1px solid var(--dark-text);
       }
-    @media (min-width:960px){
+      hr{
+        border:none;
+        background:var(--white-color2);
+        height:1px;
+      }
+    .summary-cont{
+        padding:1.5rem;
+        height:50vh;
+        gap:1rem;
+        background:var(--white-color2);
+    }
+    .summary-item{
+        display:flex;
+        justify-content:space-between;
+        align-items-center;
+    }
+    .summary-text{
+        font-weight: 600;
+        font-size:1rem;
+        font-family:var(--bdy-font-family);
+    }
+    .summary-price{
+        font-weight: 600;
+        font-size:1rem;
+        color: var(--dark-text2);
+        font-family:var(--bdy-font-family-alt);
+    }
+    .total{
+        font-weight: 700 !important;
+        font-size:1.25rem !important;
+    }
+
+
+    @media (min-width:760px){
+        .product-image{
+            width:150px;
+        }
         .bottom{
             grid-template-columns:2.5fr 1.5fr;
+        }
+    }
+    @media (min-width:960px){
+        .bottom{
+            grid-template-columns:2.5fr 1.25fr;
+        }
+        .product-image{
+            width:200px;
+        }
+        .product-cont{
+            justify-content: none;
+            gap:1rem;
+            align-items:center;
         }
     }
 `

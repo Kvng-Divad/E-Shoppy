@@ -1,10 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import {ShoppingCartOutlined ,FavoriteBorder, SearchOutlined} from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
 
 const Product = ({item}) => {
+    const navigate = useNavigate();
   return (
-    <Container className="flex">
+    <Container className="flex" onClick={() => navigate('/product')}>
         <div className="product-circle"></div>
         <img src={item.img} alt="" className="product-img" />
         <div className="product-info flex">
@@ -39,7 +41,7 @@ const Container = styled.div`
 
     .product-img{
         width:180px;
-        height:220px;
+        height:200px;
         z-index:2;
     }
     .product-icon{
@@ -56,8 +58,8 @@ const Container = styled.div`
         }
     }
     .product-circle{
-        width:220px;
-        height:220px;
+        width:210px;
+        height:210px;
         border-radius:50%;
         background:var(--circle-color);
         position:absolute;
@@ -76,5 +78,15 @@ const Container = styled.div`
         background:var(--gray-color);
        
     }
+    @media (min-width:760px){
+        .product-img{
+            width:180px;
+            height:220px;
+        }
+        .product-circle{
+            width:220px;
+            height:220px;
+        }
+      }
 `
 export default Product

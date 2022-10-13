@@ -9,12 +9,14 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import { Add, Remove } from '@mui/icons-material'
+import { useNavigate } from 'react-router-dom'
 
 
 
 
 
 const Product = () => {
+  const navigate = useNavigate();
 
   const [color, setColor] = useState('');
 
@@ -118,8 +120,11 @@ const Product = () => {
                     <span className="amount flex">{quantity}</span>
                     <Add className="remove-btn" onClick={() => handleQuantity("inc")}/>
                 </div>
-
-                <button className='btn'> Add to Cart </button>
+                <div className="btn-grid flex">
+                <button className='btn altr' onClick={() => navigate('/cart')}> Add to Cart </button>
+                <button className='Button alt' onClick={() => navigate('/products')}> Continue Shopping</button>
+                </div>
+                
               </div>
 
             </div>
@@ -175,6 +180,7 @@ const Container = styled.div`
       color:var(--dark-text) !important;
       font-family: var(--bdy-font-family) !important;
   }
+
   .add-container{
     gap:1.5rem;
   }
@@ -189,6 +195,10 @@ const Container = styled.div`
     justify-content:center;
     border-radius:10px;
     border: 1px solid var(--dark-text);
+  }
+  .btn-grid{
+    align-items:center;
+    justify-content:space-between;
   }
   @media (min-width:960px){
     .product-wrapper{

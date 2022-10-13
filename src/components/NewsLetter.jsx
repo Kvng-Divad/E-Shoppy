@@ -26,6 +26,7 @@ const Container =  styled.div`
     justify-content:center;
     flex-direction:column;
     gap:1rem;
+    padding:1rem;
 
     .news-title{
         font-size:var(--font-size-bggr);
@@ -35,9 +36,10 @@ const Container =  styled.div`
         font-weight:500;
         font-family:var(--bdy-font-family-alt);
         color:var(--dark-text2);
+        text-align:center;
     }
     .input-container{
-        width:45%;
+        width:75%;
         height:30px;
         background:var(--white-color);
         align-items:center;
@@ -59,6 +61,17 @@ const Container =  styled.div`
         :hover{
             background:transparent;
             color:var(--dark-text2);
+        }
+       
+    }
+    @media (min-width:500px){
+        .input-container{
+            width:60%;
+        }
+    }
+    @media (min-width:960px){
+        .input-container{
+            width:45%;
         }
     }
 `

@@ -3,7 +3,7 @@
 
 :root{
     --bg-color-glass: rgba(255, 255, 255, 0.164);
-    --bg-color-black:#fff;
+    --bg-color:#fff;
     --body-color:#124a6f1a;
     --cont-color: #24394919;
     --skin-color:#243949;
@@ -61,7 +61,7 @@
   body{
     font-size: var(--font-size-nr);
     font-weight: var(--font-medium);
-    background: var(--bg-color-black);
+    background: var(--bg-color);
     color: var(--dark-text);
     transition: all .3s ease;
   }
@@ -113,7 +113,8 @@
   .btn{
     padding: .5rem;
     max-width: 8rem;
-    font-size: var(--font-size-nr);
+    max-height: 3rem;
+    font-size: 1rem;
     font-weight: var(--font-semibold);
     color: var(--dark-text);
     text-transform: uppercase;
@@ -136,6 +137,41 @@
   .btn-alt:hover{
     transition: all .3s ease;
   }
+  .altr{
+    background: var(--skin-color);
+    color: var(--white-text);
+  }
+  .altr:hover{ 
+    background: transparent;
+    color: var(--dark-text);
+    transition: .3s;
+  }
+  .Button{
+    padding:.5rem;
+    text-align:center;
+    font-weight: var(--font-semibold);
+    font-size:1rem;
+    color: var(--white-text);
+    text-transform: uppercase;
+    cursor: pointer;
+    background:var(--skin-color);
+    border: 1px solid var(--skin-color);
+    box-shadow: var(--box-shadow);
+    max-width:50%;
+}
+.Button:hover{
+  background:transparent;
+  color:var(--dark-text);
+}
+.alt{
+    background:transparent;
+    color:var(--dark-text);
+}
+.alt:hover{
+  background:var(--skin-color);
+  color:var(--white-text);
+}
+
 
 
   ::-webkit-scrollbar {

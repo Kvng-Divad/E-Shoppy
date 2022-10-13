@@ -77,18 +77,19 @@ const Slide = styled.div`
 
 const Container = styled.div`
   width:100%;
-  height:100vh;
+  height:100%;
   position:relative;
 
   .slide{
     align-items:center;
     width: 100vw;
     height:100%;
+    flex-direction:column;
   }
   .slide-image{
+    display:none;
     flex:1;
     height:100%
-    padding:3rem;
     justify-content:center;
   }
   .slide-img{
@@ -98,6 +99,7 @@ const Container = styled.div`
   .slide-info{
     flex:1;
     gap: 1rem;
+    padding:3rem 2rem;
   }
   .d-left{
     left:10px;
@@ -106,7 +108,7 @@ const Container = styled.div`
     right:10px;
   }
   .slide-title{
-    font-size:3.5rem;
+    font-size:2.5rem;
     font-weight:700;
     color:var(--dark-text);
     font-family:var(--bdy-font-family-alt4);
@@ -117,7 +119,22 @@ const Container = styled.div`
     font-weight:500;
     font-family:var(--bdy-font-family);
   }
-  
+  @media (min-width:760px){
+    height:100vh;
+    .slide-image{
+      display:flex;
+    }
+    .slide-title{
+      font-size:3.5rem;
+    }
+    .slide{
+      flex-direction:row;
+    }
+    .slide-info{
+      padding:0;
+    }
+    
+  }
  
 `
 export default Slider

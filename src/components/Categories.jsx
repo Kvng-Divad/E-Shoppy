@@ -19,10 +19,14 @@ const Container = styled.div`
   padding:1.5rem;
   max-width:1100px;
   margin:auto;
-  grid-template-columns:repeat(3, 1fr);
+  grid-template-columns:repeat(1, 1fr);
   justify-items:center;
   align-items:center;
   gap:1rem;
+
+  @media (min-width:500px){
+    grid-template-columns:repeat(3, 1fr);
+  }
 `
 
 export default Categories

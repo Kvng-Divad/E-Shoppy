@@ -42,15 +42,23 @@ const Container = styled.div`
         flex-direction:column;
         align-items: center;
         justify-content: center;
+        padding:.25rem;
     }
     
     .category-title {
         color:#fff;
-        font-size:var(--h3-size);
+        font-size:var(--font-size-normal);
         font-weight:700;
+        text-align:center;
         letter-spacing:2.5px;
         font-family:var(--bdy-font-family)
-        }
+      }
+
+    @media (min-width:760px){
+      .category-title {
+        font-size:var(--h3-size);
+      }
+      }
  `
 
 export default CategoryItem

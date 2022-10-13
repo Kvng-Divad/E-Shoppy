@@ -37,7 +37,7 @@ const ProductList = () => {
                     Filter Products
                 </h3>
 
-                <FormControl sx={{ m: 1, minWidth: 80 }} size="small" >
+                <FormControl sx={{ m: .5, minWidth: 70 }} size="small" >
                     <InputLabel id="filter-products"></InputLabel>
                     <Select
                         labelId="filter-products"
@@ -57,7 +57,7 @@ const ProductList = () => {
                     </Select>
                 </FormControl>
 
-                <FormControl sx={{ m: 1, minWidth: 80 }} size="small" >
+                <FormControl sx={{ m: .5, minWidth: 50 }} size="small" >
                     <InputLabel id="filter-products"></InputLabel>
                     <Select
                         labelId="filter-products"
@@ -82,7 +82,7 @@ const ProductList = () => {
                 <h3 className="filter-title">
                         Sort Products
                 </h3>
-                <FormControl sx={{ m: 1, minWidth: 80 }} size="small" >
+                <FormControl sx={{ m: .5, minWidth: 60 }} size="small" >
                     <InputLabel id="sort-products"></InputLabel>
                     <Select
                         labelId="sort-products"
@@ -116,6 +116,7 @@ const Container = styled.div`
     .filter-container{
         justify-content:space-between;
         padding:.25rem 1.5rem;
+        flex-direction:column;
     }
     .filter{
         gap:.5rem;
@@ -123,9 +124,24 @@ const Container = styled.div`
     }
     .filter-title{
         font-weight:600;
-        font-size:var(--h3-size);
+        font-size:var(--font-size-nr);
         color:var(--dark-text2);
         font-family:var(--bdy-font-family-alt)
+    }
+    @media (min-width:500px){
+        .filter-container{
+            flex-direction:row;
+        }
+    }
+    @media (min-width:760px){
+        .filter-title{
+            font-size:var(--h3-size);
+        }
+    }
+    @media (min-width:960px){
+        .input-container{
+            width:45%;
+        }
     }
 
 
