@@ -46,7 +46,7 @@ const Navbar = () => {
               <NavLink className='navlink' to='/register'>Register</NavLink>
               <NavLink className='navlink' to='/sign-in'>sign In</NavLink>
 
-              <Badge badgeContent={4} color="primary">
+              <Badge badgeContent={3} color="primary">
                 <ShoppingCartIcon  color='action' onClick={() => navigate('/cart') }/>
               </Badge>
 
@@ -91,6 +91,7 @@ const Navbar = () => {
                     </div>
 
                     <NavLink className='navLink' to='/'>Home</NavLink>
+                    <NavLink className='navLink' to='/products'>Products</NavLink>
                     <NavLink className='navLink' to='/cart'>Cart</NavLink>
                     <NavLink className='navLink' to='/register'>Register</NavLink>
                     <NavLink className='navLink' to='/sign-in'>sign In</NavLink>

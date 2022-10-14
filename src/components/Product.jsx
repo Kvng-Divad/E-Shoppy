@@ -4,9 +4,9 @@ import {ShoppingCartOutlined ,FavoriteBorder, SearchOutlined} from '@mui/icons-m
 import { useNavigate } from 'react-router-dom';
 
 const Product = ({item}) => {
-    const navigate = useNavigate();
+    const Navigate = useNavigate();
   return (
-    <Container className="flex" onClick={() => navigate('/product')}>
+    <Container className="flex" onClick={() => Navigate('/product')}>
         <div className="product-circle"></div>
         <img src={item.img} alt="" className="product-img" />
         <div className="product-info flex">

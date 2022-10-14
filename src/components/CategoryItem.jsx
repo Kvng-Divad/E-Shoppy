@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useNavigate } from 'react-router-dom'
 
 const CategoryItem = ({item}) => {
+  const Navigate = useNavigate('')
   return (
     <Container className='grid'>
       <div className='category-img'>
@@ -9,7 +11,7 @@ const CategoryItem = ({item}) => {
       </div>
      <div className="category-info flex">
         <h3 className="category-title">{item.title}</h3>
-        <button className='btn-alt btn'>Shop Now</button>
+        <button className='btn-alt btn' onClick={() => Navigate('/products') }>Shop Now</button>
         <p className="cat"></p>
      </div>
      
