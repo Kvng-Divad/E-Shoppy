@@ -2,12 +2,19 @@ import React from 'react'
 import styled from 'styled-components'
 import { FormControl, TextField } from '@mui/material'
 import { Link } from 'react-router-dom'
+import { ArrowBack } from '@mui/icons-material'
+import { useNavigate } from 'react-router-dom'
+
 const Login = () => {
+    const navigate = useNavigate();
   return (
     <Container className='flex'>
         <div className="wrapper grid">
 
             <div className="title">
+                <div className="back">
+                    <ArrowBack className="back-arrow" onClick={() => navigate(-1)}/>
+                </div>
                 <h1 className="page-title">SIGN IN</h1>
             </div>
 
@@ -67,6 +74,18 @@ const Container = styled.div`
         font-size:var(--h3-size);
         font-weight:700;
         text-align:center;
+    }
+    .title .back{
+        width:2rem;
+        height:2rem;
+    }
+    .back-arrow{
+        font-size:var(--font-size-m);
+        color:var(--dark-text) ;
+        transition:all .5s ease;
+        :hover{
+            transform:scale(1.1)
+        }
     }
     .input{
         font-size:var(--font-size-sm) !important;
